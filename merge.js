@@ -19,7 +19,7 @@ let mergedContent = '';
 try {
   fs.readdirSync(path).forEach((fileName) => {
     if (fileName.indexOf('.DS_Store') === -1) {
-      mergedContent += '# ' + fileName + '\n';
+      mergedContent += '\n\n\n';
       mergedContent += fs.readFileSync(path + '/' + fileName, 'utf-8') + '\n';
     }
   });
