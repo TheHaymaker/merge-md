@@ -28,7 +28,7 @@ try {
     }
   });
 
-  fs.writeFileSync(path + '/merged.md', mergedContent);
+  fs.writeFileSync(path + '/_final/merged.md', mergedContent);
   console.log(`Success! Check your merged.md in ${path}`);
 } catch (err) {
   console.log(`Oh no, An error occurred! ${err.message}`);
