@@ -15,12 +15,16 @@ if (process.argv.length === 2) {
   path = process.argv[2];
 }
 let mergedContent = '';
+let count = 0;
 
 try {
   fs.readdirSync(path).forEach((fileName) => {
     if (fileName.indexOf('.DS_Store') === -1) {
-      mergedContent += '\n\n\n';
+      if(count >=1) {
+        mergedContent += '\n\n\n';
+      }
       mergedContent += fs.readFileSync(path + '/' + fileName, 'utf-8') + '\n';
+      count++;
     }
   });
 
