@@ -33,7 +33,7 @@ try {
     mdFiles.sort();
 
     mdFiles.forEach(function (file, index) {
-      mergedContent.push(fs.readFileSync(file, 'utf-8'));
+      mergedContent.push(fs.readFileSync(path + '/' + file, 'utf-8'));
     });
 
     fs.writeFile(path + '/merged.md', mergedContent.join('\n\n\n\n'));
