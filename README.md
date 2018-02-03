@@ -1,28 +1,20 @@
-# merge-md 	![npm](https://img.shields.io/npm/dt/merge-md.svg)
-
-[![NPM](https://nodei.co/npm/merge-md.png?compact=true)](https://www.npmjs.com/package/merge-md)
-
-<a href="https://yarnpkg.com/en/package/merge-md">
-  <img alt="Yarn" src="https://i.imgur.com/HxYZTl8.png" width="300">
-</a>
+# merge-md-mod 
 
 
-Once upon a time there is a computer science student. She has been taking notes in markdown for a summer course. Now it's almost final time, and she wants to merge all of her markdown notes into a single file.
-
-Because she is a computer science student, instead of doing it in 5 mins by copying and pasting, she chooses to spend 30 minutes writing a package to do the work (and ~~possibly~~ another ~~10~~ 30 minutes publishing on npm). Ah, a computer science student.
+A helper package to merge markdown files in preparation for reveal.js / reveal-md commands to generate reveal.js presentations with ease.
 
 ## Installation
 
 ### Install from npm/yarn
 
 ```bash
-$ npm install -g merge-md
+$ npm install -g merge-md-mod
 ```
 
 or
 
 ```bash
-$ yarn global add merge-md
+$ yarn global add merge-md-mod
 ```
 
 to install globally.
@@ -39,7 +31,7 @@ $ npm link
 
 This package will merge all the files in a directory into one file called `merged.md`.
 
-It now works for markdown files, but should really work for plain text and code files.
+It now works for markdown files.
 
 ### Provide directory
 
@@ -61,6 +53,6 @@ This merges all the files in the directory where this command is run.
 
 ## License
 
-Copyright 2017 Mandy Chen
+Copyright 2018 Brett Haymaker
 
 Licensed under [MIT](./license)

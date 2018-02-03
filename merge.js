@@ -15,6 +15,9 @@ if (process.argv.length === 2) {
 } else {
   path = process.argv[2];
 }
+
+console.log(path);
+
 let mergedContent = [];
 let count = 0;
 
