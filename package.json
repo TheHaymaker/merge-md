@@ -15,5 +15,11 @@
     "merge": "./merge.js"
   },
   "author": "Brett Haymaker",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "global": "^4.3.2",
+    "node-dir": "^0.1.17",
+    "reveal-md": "^1.1.1"
+  }
 }
