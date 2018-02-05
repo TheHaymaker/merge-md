@@ -1,6 +1,10 @@
 {
   "name": "merge-md-mod",
+<<<<<<< HEAD
   "version": "1.0.4",
+=======
+  "version": "1.0.5",
+>>>>>>> af9072df65de683fdd4f82a2b7e679e2da604bbc
   "description": "Merge markdown files in a directory.",
   "main": "merge.js",
   "repository": {
@@ -15,5 +19,11 @@
     "merge": "./merge.js"
   },
   "author": "Brett Haymaker",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "global": "^4.3.2",
+    "node-dir": "^0.1.17",
+    "reveal-md": "^1.1.1"
+  }
 }

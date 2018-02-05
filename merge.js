@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs-extra');
+// const dir = require('node-dir');
 
 if (process.argv.length < 2 || process.argv.length > 3) {
   console.log("Usage: '$ merge path/to/directory' or '$ merge' to merge files in current directory.");
@@ -14,22 +15,48 @@ if (process.argv.length === 2) {
 } else {
   path = process.argv[2];
 }
-let mergedContent = '';
+
+console.log(path);
+
+let mergedContent = [];
 let count = 0;
 
 try {
-  fs.readdirSync(path).forEach((fileName) => {
-    if (fileName.indexOf('.DS_Store') === -1) {
-      if(count >=1) {
-        mergedContent += '\n\n\n';
-      }
-      mergedContent += fs.readFileSync(path + '/' + fileName, 'utf-8') + '\n';
-      count++;
-    }
+  fs.readdir(path, function (err, files) {
+    let mdFiles;
+
+    mdFiles = files.filter(function (file) {
+      return file.substr(-3) === '.md' &&
+        file !== 'merged.md';
+    });
+
+    mdFiles.sort();
+
+    mdFiles.forEach(function (file, index) {
+      mergedContent.push(fs.readFileSync(path + '/' + file, 'utf-8'));
+    });
+
+    fs.writeFile(path + '/merged.md', mergedContent.join('\n\n\n\n'));
+    console.log('Successfully merges .md files in merged.md');
+
   });
 
-  fs.writeFileSync(path + '/../_final/merged.md', mergedContent);
-  console.log(`Success! Check your merged.md in ./_final`);
+  
+  // fs.copy(path + '/images', path+ '/../_final/images', function (err) {
+  //   if (err) {
+  //     console.error(err);
+  //   } else {
+  //     console.log("successly copied images!");
+  //   }
+  // });
+  
+  // fs.copy(path + 'merged.md', path + '/../_final/merged.md', function (err) {
+  //   if (err) {
+  //     console.error(err);
+  //   } else {
+  //     console.log("successly isolates merged copy to static folder");
+  //   }
+  // });
 } catch (err) {
   console.log(`Oh no, An error occurred! ${err.message}`);
   process.exit(-1);
