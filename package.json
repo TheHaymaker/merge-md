@@ -1,10 +1,6 @@
 {
   "name": "merge-md-mod",
-<<<<<<< HEAD
-  "version": "1.0.4",
-=======
-  "version": "1.0.5",
->>>>>>> af9072df65de683fdd4f82a2b7e679e2da604bbc
+  "version": "1.0.6",
   "description": "Merge markdown files in a directory.",
   "main": "merge.js",
   "repository": {
